@@ -56,3 +56,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Editor directories and files
+.idea
+
+# Vue.js
+node_modules/
+dist/
