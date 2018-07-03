@@ -1,0 +1,129 @@
+// Variables
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono');
+
+// Color system
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+$grays: map-merge((
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
+
+$blue:    #1e88e5 !default;
+$red:     #c62828 !default;
+$yellow:  #ffc107 !default;
+$green:   #26a69a !default;
+$cyan:    #00acc1 !default;
+
+@function blue-gray($key: "100") {
+  @return scale-color(map-get($grays, $key), $blue: 5%);
+}
+
+$primary:            $cyan !default;
+$secondary:          $blue !default;
+$success:            $green !default;
+$info:               $blue !default;
+$warning:            $yellow !default;
+$danger:             $red !default;
+$light:              $gray-600 !default;
+$dark:               $gray-800 !default;
+$background:         blue-gray("900") !default;
+$background-light:   blue-gray("800") !default;
+
+// Body
+$body-bg:                   $background !default;
+$body-color:                $white !default;
+
+// Fonts
+$font-family-sans-serif:      "Ubuntu", sans-serif !default;
+$font-family-monospace:       "Ubuntu Mono", monospace !default;
+
+$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+
+
+.btn-primary, .btn-secondary, .btn-light {
+  border-width: 0 !important;
+}
+
+.btn-primary:focus, .btn-secondary:focus, .btn-light:focus {
+  box-shadow: none !important;
+}
+
+.btn-primary:hover {
+  background-color: rgba($primary, 0.8) !important;
+}
+
+.panel {
+  background-color: $background-light;
+  box-shadow: $box-shadow;
+}
+
+.navbar {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+  &.bg-dark {
+    background-color: $background-light !important;
+  }
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+  &.pointer {
+    cursor: pointer;
+  }
+}
+
+hr {
+  border-color: $cyan !important;
+  width: 100%;
+}
+
+.frequency {
+  .btn {
+    width: 52px;
+  }
+  .frequency-icon {
+    .icon {
+      width: 16px;
+      height: 16px;
+    }
+    &:hover {
+      background-color: rgba($light, 1.0) !important;
+      cursor: auto !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .frequency {
+    .btn {
+      font-size: 0.9rem;
+      width: 48px;
+    }
+  }
+}
